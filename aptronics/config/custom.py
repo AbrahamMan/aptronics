@@ -3,6 +3,7 @@ import pdb
 import frappe,json
 from frappe import _, msgprint, throw
 
+
 def get_custom_series(doc, method=None):
     name = frappe.get_value(doc.doctype,doc.name,'name')
     if name == None:
@@ -46,9 +47,9 @@ def get_prefix(doc):
 
     elif doc.doctype == 'Supplier':
         prefix = doc.supplier_name[:3]
-        #supplierNameCount = frappe.db.sql("select count(`name`) as n from `tabSupplier` where supplier_name = '" + doc.supplier_name + "'")[0][0]
-        #if supplierNameCount >0:
-        #    frappe.throw(_("Duplicate company name."))
+        supplierNameCount = frappe.db.sql("select count(`name`) as n from `tabSupplier` where supplier_name = '" + doc.supplier_name + "'")[0][0]
+        if supplierNameCount >0:
+           frappe.throw(_("Duplicate company name."))
     elif doc.doctype == 'Contact':
         prefix = doc.first_name[:3]
 
