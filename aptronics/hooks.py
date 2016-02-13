@@ -72,13 +72,13 @@ app_license = "Private"
 
 doc_events = {
  	"Customer": {
- 		"validate": "aptronics.aptronics.config.customer.get_custom_series"
+ 		"validate": "aptronics.aptronics.config.custom.get_custom_series"
 	},
 	"Contact": {
- 		"validate": "aptronics.aptronics.config.customer.get_custom_series"
+ 		"validate": "aptronics.aptronics.config.custom.get_custom_series"
 	},
 	"Supplier": {
- 		"validate": "aptronics.aptronics.config.customer.get_custom_series"
+ 		"validate": "aptronics.aptronics.config.custom.get_custom_series"
 	}
  }
 
