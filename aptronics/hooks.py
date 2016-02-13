@@ -70,13 +70,17 @@ app_license = "Private"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
-# }
+doc_events = {
+ 	"Customer": {
+ 		"validate": "aptronics.aptronics.config.customer.get_custom_series"
+	},
+	"Contact": {
+ 		"validate": "aptronics.aptronics.config.customer.get_custom_series"
+	},
+	"Supplier": {
+ 		"validate": "aptronics.aptronics.config.customer.get_custom_series"
+	}
+ }
 
 # Scheduled Tasks
 # ---------------
